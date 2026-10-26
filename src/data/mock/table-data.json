@@ -1,0 +1,20 @@
+{
+  "data": [
+    { "id": "1", "name": "Alice Johnson",   "status": "active"   },
+    { "id": "2", "name": "Bob Smith",        "status": "inactive" },
+    { "id": "3", "name": "Carol White",      "status": "active"   },
+    { "id": "4", "name": "David Brown",      "status": "pending"  },
+    { "id": "5", "name": "Eva Martinez",     "status": "active"   },
+    { "id": "6", "name": "Frank Lee",        "status": "inactive" },
+    { "id": "7", "name": "Grace Kim",        "status": "active"   },
+    { "id": "8", "name": "Henry Wilson",     "status": "pending"  }
+  ],
+  "meta": {
+    "pagination": { "total": 8, "page": 1, "pageSize": 5 },
+    "columns": [
+      { "field": "id",     "headerName": "ID",     "type": "string" },
+      { "field": "name",   "headerName": "Name",   "type": "string" },
+      { "field": "status", "headerName": "Status", "type": "string" }
+    ]
+  }
+}

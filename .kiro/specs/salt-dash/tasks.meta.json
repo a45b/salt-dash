@@ -1,0 +1,514 @@
+{
+  "pbtResults": {
+    "3.3 Write property test for config round-trip page registration": {
+      "status": "passed",
+      "lastRunTimestamp": 1792964110750
+    },
+    "3.4 Write property test for invalid page entries being skipped": {
+      "status": "passed",
+      "lastRunTimestamp": 1792964113490
+    },
+    "3.5 Write property test for duplicate path/pageId first-wins invariant": {
+      "status": "passed",
+      "lastRunTimestamp": 1792964116314
+    }
+  },
+  "executionHistory": {
+    "1. Scaffold project structure and install dependencies": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961148979
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961156394
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962354233
+      }
+    ],
+    "2.1 Create `src/types/config.ts` with the `DashboardConfig`, `PageConfig`, `DataSourceConfig`, `MockDataSourceConfig`, `ApiDataSourceConfig`, `WebSocketDataSourceConfig`, `HeaderConfig`, `BreadcrumbItem`, and `FilterConfig` interfaces, with JSDoc on every field": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149082
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962357851
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962472098
+      }
+    ],
+    "2.2 Create `src/types/widgets.ts` with `BaseWidgetConfig`, `ChartWidgetConfig`, `TableWidgetConfig`, `KPIWidgetConfig`, `TextWidgetConfig`, `ColumnDef`, and a `WidgetConfig` discriminated union": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149138
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962360808
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962475287
+      }
+    ],
+    "2.3 Create `src/types/data.ts` with the `DataResult<T>`, `DataAdapter`, and `MockDataFile` interfaces": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149176
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962363973
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962478317
+      }
+    ],
+    "3.1 Create `src/config/validateConfig.ts` implementing the synchronous `validateConfig(raw: unknown): ValidationResult` function that checks required page fields, unique `path` and `pageId`, unique `dataSourceId`, column count bounds, widget span bounds, and non-empty `widgetId`": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149216
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962482048
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962989516
+      }
+    ],
+    "4.1 Create `src/config/dashboard.config.ts` exporting a minimal `DashboardConfig` object with one example page, two or three sample widgets, and references to mock data source entries": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149295
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962996813
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792963260949
+      }
+    ],
+    "4.2 Create example mock JSON files under `src/data/mock/`: one file per built-in widget type (`chart-data.json`, `table-data.json`, `kpi-data.json`, `text-data.json`), each conforming to the `MockDataFile` schema with a top-level `data` array of at least one entry and an optional `meta` object": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149332
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792963000017
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792963264804
+      }
+    ],
+    "5.1 Create `src/data/MockAdapter.ts` implementing `DataAdapter` — reads the JSON file at `filePath` relative to project root using `fetch`/`import`, returns `{ data, loading: false, error: null }` on success, `{ data: null, loading: false, error: <message with filePath> }` on missing file, and `{ data: null, loading: false, error: <message mentioning parse failure> }` on malformed JSON": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149364
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964146002
+      },
+      {
+        "executionId": "5933fd6f-fd4d-420f-9b2f-2e481e66a245",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964167510
+      },
+      {
+        "executionId": "5933fd6f-fd4d-420f-9b2f-2e481e66a245",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964265913
+      }
+    ],
+    "5.2 Create `src/data/ApiAdapter.ts` and `src/data/WebSocketAdapter.ts` as stub adapters that immediately return `{ data: null, loading: false, error: \"not implemented\" }` for their respective types": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149399
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964149637
+      },
+      {
+        "executionId": "5933fd6f-fd4d-420f-9b2f-2e481e66a245",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964171053
+      },
+      {
+        "executionId": "5933fd6f-fd4d-420f-9b2f-2e481e66a245",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964269141
+      }
+    ],
+    "5.3 Create `src/data/DataAdapter.ts` as the factory/dispatcher: resolves a `dataSourceId` against the config `dataSources` map, selects the correct adapter, caches mock responses for the lifetime of the current page render, and returns a uniform `DataResult<T>`; missing `dataSourceId` returns `{ data: null, loading: false, error: <non-empty string> }`": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149430
+      },
+      {
+        "executionId": "5933fd6f-fd4d-420f-9b2f-2e481e66a245",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964272333
+      },
+      {
+        "executionId": "ce8d39a7-f213-48d5-8819-d6d646f851bc",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964554516
+      },
+      {
+        "executionId": "ce8d39a7-f213-48d5-8819-d6d646f851bc",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964589729
+      }
+    ],
+    "6.1 Create `src/hooks/useDataSource.ts` wrapping `DataAdapter.fetch` in a React `useEffect`; manages `loading`, `data`, and `error` state; accepts `dataSourceId` and an optional `params` record; re-fetches when either argument changes": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149470
+      },
+      {
+        "executionId": "ce8d39a7-f213-48d5-8819-d6d646f851bc",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964593831
+      }
+    ],
+    "6.2 Create `src/hooks/useFilters.ts` defining `FilterContext` and its `Provider`; initialises filter values from URL query parameters on mount (taking precedence over `defaultValue`); `setFilter` updates both in-memory state and URL via `useSearchParams`": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149501
+      },
+      {
+        "executionId": "ce8d39a7-f213-48d5-8819-d6d646f851bc",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964597047
+      }
+    ],
+    "6.5 Create `src/hooks/useRouteParams.ts` as a thin wrapper around React Router's `useParams()`, returning `Record<string, string | undefined>` for all named route params in the current URL": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149535
+      }
+    ],
+    "7.1 Create `src/widgets/registry.ts` with `registerWidget` and `resolveWidget` functions backed by a `Map<string, WidgetComponent>`": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149575
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962485023
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962993125
+      }
+    ],
+    "8.1 Create `src/widgets/ChartWidget.tsx` rendering Recharts components (`BarChart`, `LineChart`, `PieChart`, `AreaChart`, `ScatterChart`) based on `chartType`; applies Salt DS colour tokens to all chart series; maps `xField`/`yField` config to data keys; handles `pie` charts without requiring `xField`/`yField`": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149607
+      }
+    ],
+    "9.1 Create `src/widgets/TableWidget.tsx` rendering a Salt DS data grid with configurable `columns`; implements three-state column sort (asc → desc → unsorted) with visual indicator; renders skeleton rows (count = `pageSize` or 5) while loading; pagination controls when `pageSize` is set; empty-state message; error state; optional column resizing (min 48px, max 800px) when `resizableColumns` is true": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149656
+      }
+    ],
+    "10.1 Create `src/widgets/KPIWidget.tsx` displaying a primary metric value from `valueField`, a `label`, optional trend indicator (up/down arrow with absolute %, zero value shows no arrow), optional `prefix`/`suffix`, and optional target status colours (Salt DS positive/warning/negative tokens); loading skeleton; placeholder when `valueField` is null/undefined/absent": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149696
+      }
+    ],
+    "11.1 Create `src/widgets/TextWidget.tsx` using `marked` to parse Markdown and `DOMPurify` to sanitise output (strip `<script>`, `<iframe>`, `<object>`, `<embed>`, `on*` attributes, preserving CommonMark-safe elements); applies Salt DS typography tokens to all rendered elements; handles static `content`, `content` + `dataSourceId` precedence, empty content, data-source-fetched content with 30-second timeout, and data source fetch failures": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149723
+      }
+    ],
+    "12. Register all built-in widgets": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149761
+      }
+    ],
+    "13. Checkpoint — core widgets and data layer": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149789
+      }
+    ],
+    "14.1 Create `src/components/BreadcrumbBar.tsx` using Salt DS Breadcrumb components; renders items in config order; last item always plain text regardless of `href`; items with `href` (non-last) render as links; items without `href` render as plain text; empty array renders nothing; items with missing/empty `label` are omitted without leaving a gap": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149826
+      }
+    ],
+    "15.1 Create `src/components/PageHeader.tsx` using Salt DS heading/body-text components; renders title (when present) and subtitle; renders a Salt DS `Button` for each action in the `actions` array using the action's `label` and `variant` (defaulting to Salt DS default variant); on click, calls `dispatchAction(actionId)`; absent `header` config renders nothing": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149865
+      }
+    ],
+    "15.2 Create `src/data/actionRegistry.ts` with `registerAction` and `dispatchAction`; `dispatchAction` logs a console warning for unregistered `actionId` and does nothing further": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149897
+      }
+    ],
+    "16.1 Create `src/components/FilterBar.tsx` rendering a row of filter controls; dispatches `setFilter` from `FilterContext` on value change; text-search filters debounce 300 ms before triggering re-evaluation": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149932
+      }
+    ],
+    "16.2 Implement `SelectFilter`, `MultiSelectFilter`, `DateRangeFilter`, `TextSearchFilter`, and `ToggleFilter` sub-components (can live in the same file or separate files in `src/components/filters/`), each using the corresponding Salt DS component; `select` disables and labels \"no options\" when `options` is absent/empty; filters with `dataSourceId` populate from data source within 5 seconds, else render disabled with error message": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149963
+      }
+    ],
+    "17.1 Create `src/components/WidgetGrid.tsx` rendering a CSS grid with column count from page config (default 12); places each `WidgetCell` in config order; responsive: below 768px viewport width, each widget spans the full column count": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961149999
+      }
+    ],
+    "17.2 Create `src/components/WidgetCell.tsx` applying `colSpan` (capped to page column count) and `rowSpan` (defaulting to 6 and 1 respectively) as CSS grid properties": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961150029
+      }
+    ],
+    "17.3 Create `src/components/WidgetRenderer.tsx` resolving `widgetType` from the registry; renders the matched component with its config; renders an `UnknownWidgetPlaceholder` (fixed error label + unrecognised type string) when `widgetType` is not in the registry; deduplicates widgets by `widgetId` (first-wins, console warning for duplicates)": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961150097
+      }
+    ],
+    "18.1 Create `src/pages/PageRenderer.tsx` composing `BreadcrumbBar`, `PageHeader`, `FilterBar` (wrapped in `FilterContext.Provider`), and `WidgetGrid` for the matched page config; passes `useFilters` values to each widget's `useDataSource` call as `params`": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961150128
+      }
+    ],
+    "18.2 Create `src/pages/NotFoundPage.tsx` built entirely with Salt DS components, showing a \"page not found\" message and a link to the first configured page (or `/` if none)": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961150163
+      }
+    ],
+    "18.3 Create `src/pages/FatalErrorScreen.tsx` and `src/pages/EmptyConfigScreen.tsx` using Salt DS components; `FatalErrorScreen` lists each `ValidationError` path and message; `EmptyConfigScreen` shows a message indicating no pages are configured": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961150199
+      }
+    ],
+    "18.4 Create `src/config/ConfigValidator.tsx` that imports `dashboard.config.ts`, calls `validateConfig`, renders `FatalErrorScreen` on fatal errors, and passes the validated config to `AppRouter` on success": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961150228
+      }
+    ],
+    "18.5 Create `src/AppRouter.tsx` building one `<Route>` per valid page entry (using the page's `path`) plus a catch-all `*` route for `NotFoundPage`; if the validated config has zero page entries renders `EmptyConfigScreen`": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961150265
+      }
+    ],
+    "18.6 Create `src/App.tsx` wrapping `ConfigValidator` in a `SaltProvider` configured with `theme` and `mode` from config (defaulting to `\"light\"` and Salt DS default theme); wrap `App` in `BrowserRouter` from react-router-dom in `src/main.tsx`": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961150299
+      }
+    ],
+    "18.7 Update `validateConfig` / `AppRouter` to detect page entries whose `path` patterns would match the same URL (e.g. `/orders/:orderId` and `/orders/:id`); log a console warning identifying the conflicting paths and render only the first matching entry": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961150336
+      }
+    ],
+    "19. Apply Salt Design System styling constraints globally": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961150364
+      }
+    ],
+    "20. Checkpoint — full application wiring": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961150402
+      }
+    ],
+    "22. Final checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792961150431
+      }
+    ],
+    "2. Define the TypeScript config schema and types": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962478409
+      }
+    ],
+    "3. Implement config validation": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962989594
+      }
+    ],
+    "7. Implement the widget registry": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792962993179
+      }
+    ],
+    "4. Create the stub config file and sample mock data": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792963264851
+      }
+    ],
+    "3.2 Write unit tests for `validateConfig` in `src/config/__tests__/validateConfig.test.ts`": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792963290205
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964128332
+      }
+    ],
+    "3.3 Write property test for config round-trip page registration": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792963293733
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964131811
+      }
+    ],
+    "3.4 Write property test for invalid page entries being skipped": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792963297750
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964134753
+      }
+    ],
+    "3.5 Write property test for duplicate path/pageId first-wins invariant": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792963300906
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964138163
+      }
+    ],
+    "7.2 Write unit tests for the registry in `src/widgets/__tests__/registry.test.ts`": [
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792963304496
+      },
+      {
+        "executionId": "3280745f-38e0-4315-8d11-4210fd7136ba",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964142352
+      }
+    ],
+    "5. Implement the Data Adapter layer": [
+      {
+        "executionId": "ce8d39a7-f213-48d5-8819-d6d646f851bc",
+        "chatSessionId": "sess_f58ef356-f15c-4e84-82b6-08f0e61351ef",
+        "timestamp": 1792964589780
+      }
+    ]
+  }
+}

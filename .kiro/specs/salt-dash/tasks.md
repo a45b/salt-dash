@@ -6,7 +6,7 @@ Build a config-driven single-page dashboard application using React, TypeScript,
 
 ## Tasks
 
-- [ ] 1. Scaffold project structure and install dependencies
+- [x] 1. Scaffold project structure and install dependencies
   - Initialise a Vite project using the React + TypeScript template with Node ≥ 24 in the `engines` field of `package.json`
   - Create the required top-level `src/` directories: `components/`, `widgets/`, `config/`, `data/`, `hooks/`, `pages/`, `types/`
   - Install production dependencies: `react-router-dom`, `@salt-ds/core`, `@salt-ds/lab`, `@salt-ds/icons`, `recharts`, `marked`, `dompurify`
@@ -14,45 +14,45 @@ Build a config-driven single-page dashboard application using React, TypeScript,
   - Add `dev`, `build`, `preview`, and `test` scripts to `package.json`; configure Vitest with jsdom environment in `vite.config.ts`
   - _Requirements: 15.1, 15.2, 15.3, 15.4, 15.5, 15.6_
 
-- [ ] 2. Define the TypeScript config schema and types
-  - [ ] 2.1 Create `src/types/config.ts` with the `DashboardConfig`, `PageConfig`, `DataSourceConfig`, `MockDataSourceConfig`, `ApiDataSourceConfig`, `WebSocketDataSourceConfig`, `HeaderConfig`, `BreadcrumbItem`, and `FilterConfig` interfaces, with JSDoc on every field
+- [x] 2. Define the TypeScript config schema and types
+  - [x] 2.1 Create `src/types/config.ts` with the `DashboardConfig`, `PageConfig`, `DataSourceConfig`, `MockDataSourceConfig`, `ApiDataSourceConfig`, `WebSocketDataSourceConfig`, `HeaderConfig`, `BreadcrumbItem`, and `FilterConfig` interfaces, with JSDoc on every field
     - `FilterConfig` must include `routeParams?: string[]` — an optional list of route param names (from the page's dynamic path segments) whose current URL values are forwarded to the filter's Data_Adapter as fetch params
     - _Requirements: 14.5, 14.6, 16.3_
-  - [ ] 2.2 Create `src/types/widgets.ts` with `BaseWidgetConfig`, `ChartWidgetConfig`, `TableWidgetConfig`, `KPIWidgetConfig`, `TextWidgetConfig`, `ColumnDef`, and a `WidgetConfig` discriminated union
+  - [x] 2.2 Create `src/types/widgets.ts` with `BaseWidgetConfig`, `ChartWidgetConfig`, `TableWidgetConfig`, `KPIWidgetConfig`, `TextWidgetConfig`, `ColumnDef`, and a `WidgetConfig` discriminated union
     - `BaseWidgetConfig` must include `routeParams?: string[]` — a list of route param names from the page's dynamic segments that should be forwarded to this widget's Data_Adapter as fetch params
     - _Requirements: 3.1, 6.1, 7.1, 8.1, 9.1, 16.3_
-  - [ ] 2.3 Create `src/types/data.ts` with the `DataResult<T>`, `DataAdapter`, and `MockDataFile` interfaces
+  - [x] 2.3 Create `src/types/data.ts` with the `DataResult<T>`, `DataAdapter`, and `MockDataFile` interfaces
     - _Requirements: 4.4, 5.6_
 
-- [ ] 3. Implement config validation
-  - [ ] 3.1 Create `src/config/validateConfig.ts` implementing the synchronous `validateConfig(raw: unknown): ValidationResult` function that checks required page fields, unique `path` and `pageId`, unique `dataSourceId`, column count bounds, widget span bounds, and non-empty `widgetId`
+- [x] 3. Implement config validation
+  - [x] 3.1 Create `src/config/validateConfig.ts` implementing the synchronous `validateConfig(raw: unknown): ValidationResult` function that checks required page fields, unique `path` and `pageId`, unique `dataSourceId`, column count bounds, widget span bounds, and non-empty `widgetId`
     - Returns `{ valid: true, config: DashboardConfig }` or `{ valid: false, errors: ValidationError[] }`
     - _Requirements: 1.2, 1.5, 1.6, 2.2, 4.1, 14.3, 14.4_
-  - [ ]* 3.2 Write unit tests for `validateConfig` in `src/config/__tests__/validateConfig.test.ts`
+  - [x]* 3.2 Write unit tests for `validateConfig` in `src/config/__tests__/validateConfig.test.ts`
     - Valid config passes; missing fields return specific errors; duplicates identified; bounds checked
     - _Requirements: 1.2, 1.5, 1.6_
-  - [ ]* 3.3 Write property test for config round-trip page registration
+  - [x]* 3.3 Write property test for config round-trip page registration
     - **Property 1: Config round-trip page registration**
     - **Validates: Requirements 1.1, 1.2, 1.7**
-  - [ ]* 3.4 Write property test for invalid page entries being skipped
+  - [x]* 3.4 Write property test for invalid page entries being skipped
     - **Property 2: Invalid page entries are skipped, not crashed**
     - **Validates: Requirements 1.5**
-  - [ ]* 3.5 Write property test for duplicate path/pageId first-wins invariant
+  - [x]* 3.5 Write property test for duplicate path/pageId first-wins invariant
     - **Property 3: Duplicate page path/pageId — first-wins invariant**
     - **Validates: Requirements 1.6**
 
-- [ ] 4. Create the stub config file and sample mock data
-  - [ ] 4.1 Create `src/config/dashboard.config.ts` exporting a minimal `DashboardConfig` object with one example page, two or three sample widgets, and references to mock data source entries
+- [x] 4. Create the stub config file and sample mock data
+  - [x] 4.1 Create `src/config/dashboard.config.ts` exporting a minimal `DashboardConfig` object with one example page, two or three sample widgets, and references to mock data source entries
     - _Requirements: 14.1, 14.2_
-  - [ ] 4.2 Create example mock JSON files under `src/data/mock/`: one file per built-in widget type (`chart-data.json`, `table-data.json`, `kpi-data.json`, `text-data.json`), each conforming to the `MockDataFile` schema with a top-level `data` array of at least one entry and an optional `meta` object
+  - [x] 4.2 Create example mock JSON files under `src/data/mock/`: one file per built-in widget type (`chart-data.json`, `table-data.json`, `kpi-data.json`, `text-data.json`), each conforming to the `MockDataFile` schema with a top-level `data` array of at least one entry and an optional `meta` object
     - _Requirements: 5.1, 5.6_
 
-- [ ] 5. Implement the Data Adapter layer
-  - [ ] 5.1 Create `src/data/MockAdapter.ts` implementing `DataAdapter` — reads the JSON file at `filePath` relative to project root using `fetch`/`import`, returns `{ data, loading: false, error: null }` on success, `{ data: null, loading: false, error: <message with filePath> }` on missing file, and `{ data: null, loading: false, error: <message mentioning parse failure> }` on malformed JSON
+- [x] 5. Implement the Data Adapter layer
+  - [x] 5.1 Create `src/data/MockAdapter.ts` implementing `DataAdapter` — reads the JSON file at `filePath` relative to project root using `fetch`/`import`, returns `{ data, loading: false, error: null }` on success, `{ data: null, loading: false, error: <message with filePath> }` on missing file, and `{ data: null, loading: false, error: <message mentioning parse failure> }` on malformed JSON
     - _Requirements: 4.5, 5.2, 5.4_
-  - [ ] 5.2 Create `src/data/ApiAdapter.ts` and `src/data/WebSocketAdapter.ts` as stub adapters that immediately return `{ data: null, loading: false, error: "not implemented" }` for their respective types
+  - [x] 5.2 Create `src/data/ApiAdapter.ts` and `src/data/WebSocketAdapter.ts` as stub adapters that immediately return `{ data: null, loading: false, error: "not implemented" }` for their respective types
     - _Requirements: 4.7, 4.8_
-  - [ ] 5.3 Create `src/data/DataAdapter.ts` as the factory/dispatcher: resolves a `dataSourceId` against the config `dataSources` map, selects the correct adapter, caches mock responses for the lifetime of the current page render, and returns a uniform `DataResult<T>`; missing `dataSourceId` returns `{ data: null, loading: false, error: <non-empty string> }`
+  - [x] 5.3 Create `src/data/DataAdapter.ts` as the factory/dispatcher: resolves a `dataSourceId` against the config `dataSources` map, selects the correct adapter, caches mock responses for the lifetime of the current page render, and returns a uniform `DataResult<T>`; missing `dataSourceId` returns `{ data: null, loading: false, error: <non-empty string> }`
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.9_
   - [ ]* 5.4 Write unit tests for `DataAdapter` in `src/data/__tests__/DataAdapter.test.ts`
     - Unknown ID resolves to error state; mock adapter returns data; missing file returns error with path; malformed file returns parse error
@@ -92,10 +92,10 @@ Build a config-driven single-page dashboard application using React, TypeScript,
     - **Property 15: Filter context ignores unrelated query params**
     - **Validates: Requirements 12.11**
 
-- [ ] 7. Implement the widget registry
-  - [ ] 7.1 Create `src/widgets/registry.ts` with `registerWidget` and `resolveWidget` functions backed by a `Map<string, WidgetComponent>`
+- [x] 7. Implement the widget registry
+  - [x] 7.1 Create `src/widgets/registry.ts` with `registerWidget` and `resolveWidget` functions backed by a `Map<string, WidgetComponent>`
     - _Requirements: 3.4, 15.7_
-  - [ ]* 7.2 Write unit tests for the registry in `src/widgets/__tests__/registry.test.ts`
+  - [x]* 7.2 Write unit tests for the registry in `src/widgets/__tests__/registry.test.ts`
     - Register + resolve round-trip; unknown type returns `undefined`; re-registering same key overwrites
     - _Requirements: 3.4_
 

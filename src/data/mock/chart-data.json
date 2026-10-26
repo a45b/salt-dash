@@ -1,0 +1,13 @@
+{
+  "data": [
+    { "month": "Jan", "revenue": 42000 },
+    { "month": "Feb", "revenue": 38000 },
+    { "month": "Mar", "revenue": 51000 },
+    { "month": "Apr", "revenue": 47000 },
+    { "month": "May", "revenue": 53000 },
+    { "month": "Jun", "revenue": 61000 }
+  ],
+  "meta": {
+    "pagination": { "total": 6, "page": 1, "pageSize": 6 }
+  }
+}
